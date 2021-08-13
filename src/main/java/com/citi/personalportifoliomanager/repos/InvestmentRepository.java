@@ -1,14 +1,14 @@
 package com.citi.personalportifoliomanager.repos;
 
-import com.citi.personalportifoliomanager.entities.Cash;
+import com.citi.personalportifoliomanager.entities.Investment;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 
-public interface CashRepository extends JpaRepository<Cash, Integer> {
+public interface InvestmentRepository extends JpaRepository<Investment, Integer> {
 
 
-    @Query(value="select * from cash c where c.user_id = :id" ,nativeQuery=true)
-    public List<Cash> findCashByUserId(int id);
+    @Query(value="select * from investment where c.user_id = :id" ,nativeQuery=true)
+    public List<Investment> findInvestmentById(int id);
 }

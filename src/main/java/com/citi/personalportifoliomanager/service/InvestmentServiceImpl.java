@@ -1,35 +1,38 @@
 package com.citi.personalportifoliomanager.service;
 
-import com.citi.personalportifoliomanager.entities.Cash;
-import com.citi.personalportifoliomanager.entities.User;
-import com.citi.personalportifoliomanager.repos.CashRepository;
+import com.citi.personalportifoliomanager.entities.Investment;
+import com.citi.personalportifoliomanager.repos.InvestmentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.*;
-import java.util.*;
+import java.util.Collection;
+import java.util.Optional;
 
 @Service
-public class CashServiceImpl implements CashService{
+public class InvestmentServiceImpl implements InvestmentService {
+
+
     @Autowired
-    private CashRepository cashRepository;
+    private InvestmentRepository InvestmentRepository;
 
 
     @Override
-    public Collection<Cash> findCashAccountByUserId(int userId) {
-        return cashRepository.findCashByUserId(userId);
+    public Collection<Investment> findInvestmentAccountByUserId(int userId) {
+        return InvestmentRepository.findInvestmentById(userId);
     }
 
-    @Override
-    public Collection<Cash> findAllCashAccount() {
-        return cashRepository.findAll();
-    }
 
     @Override
-    public Cash findCashAccountById(int id) {
-        Optional<Cash> cash =  cashRepository.findById(id);
-        if (cash.isPresent()) {
-            return cash.get();
+    public Collection<Investment> findAllInvestmentAccount() {
+        return InvestmentRepository.findAll();
+    }
+
+
+    @Override
+    public Investment findInvestmentAccountById(int id) {
+        Optional<Investment> Investment =  InvestmentRepository.findById(id);
+        if (Investment.isPresent()) {
+            return Investment.get();
         }
         else return null;
     }

@@ -4,21 +4,21 @@ package com.citi.personalportifoliomanager.entities;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.sql.Date;
 
 @Entity
-@Table(name="cash_transcation")
-public class CashTransaction {
-    //id, cash_id, amount, time, user_id
+@Table(name="investment_transcationcash_transcation")
+public class InvestmentTransaction implements Serializable {
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column(name="id")
     private int id;
 
-    @JoinColumn(name = "cash_id", referencedColumnName = "id")
+    @JoinColumn(name = "investment_id", referencedColumnName = "id")
     @ManyToOne
-    private Cash cashId;
+    private Investment investmentId;
 
     @Column(name = "amount")
     private float amount;
@@ -27,8 +27,37 @@ public class CashTransaction {
     @DateTimeFormat(pattern = "yyyy-MM-dd HH-mm-ss")
     private Date time;
 
-    // bidirectional
-    @JoinColumn (name="user_id", referencedColumnName="id", nullable = false)
-    @ManyToOne
-    private User user;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Investment getInvestmentId() {
+        return investmentId;
+    }
+
+    public void setInvestmentId(Investment investmentId) {
+        this.investmentId = investmentId;
+    }
+
+    public float getAmount() {
+        return amount;
+    }
+
+    public void setAmount(float amount) {
+        this.amount = amount;
+    }
+
+    public Date getTime() {
+        return time;
+    }
+
+    public void setTime(Date time) {
+        this.time = time;
+    }
+
 }

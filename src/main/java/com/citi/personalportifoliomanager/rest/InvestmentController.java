@@ -4,11 +4,12 @@ import com.citi.personalportifoliomanager.entities.Cash;
 import com.citi.personalportifoliomanager.service.CashService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
 import java.util.Collection;
 
 @RestController
-@RequestMapping("/cashes")
-public class CashController {
+@RequestMapping("/invest")
+public class InvestmentController {
     @Autowired
     private CashService cashService;
 

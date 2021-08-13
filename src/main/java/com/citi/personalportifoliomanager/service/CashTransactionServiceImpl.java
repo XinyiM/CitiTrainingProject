@@ -1,2 +1,4 @@
-package com.citi.personalportifoliomanager.service;public class CashTransactionServiceImpl {
+package com.citi.personalportifoliomanager.service;
+
+public class CashTransactionServiceImpl {
 }

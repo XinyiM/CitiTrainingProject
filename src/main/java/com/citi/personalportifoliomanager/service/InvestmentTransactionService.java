@@ -1,2 +1,4 @@
-package com.citi.personalportifoliomanager.service;public interface InvestmentTransactionService {
+package com.citi.personalportifoliomanager.service;
+
+public interface InvestmentTransactionService {
 }

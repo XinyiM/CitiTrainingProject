@@ -7,8 +7,8 @@ import java.io.Serializable;
 import java.sql.Date;
 
 @Entity
-@Table(name="cash")
-public class Cash implements Serializable {
+@Table(name="investment")
+public class Investment implements Serializable {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column(name="id")

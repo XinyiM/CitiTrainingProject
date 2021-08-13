@@ -1,10 +1,15 @@
 package com.citi.personalportifoliomanager.entities;
 
+import org.springframework.core.serializer.Serializer;
+
 import javax.persistence.*;
+import javax.transaction.Transaction;
+import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Table(name="user")
-public class User {
+public class User implements Serializable {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column(name="id")
