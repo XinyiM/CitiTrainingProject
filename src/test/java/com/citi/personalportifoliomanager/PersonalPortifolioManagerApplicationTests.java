@@ -9,5 +9,4 @@ class PersonalPortifolioManagerApplicationTests {
     @Test
     void contextLoads() {
     }
-
 }

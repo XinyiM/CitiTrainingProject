@@ -9,7 +9,7 @@ public class StockWrapper {
 
     public StockWrapper(final Stock stock) {
         this.stock = stock;
-        lastAccessed = LocalDateTime.now();
+        this.lastAccessed = LocalDateTime.now();
     }
 
     public Stock getStock(){

@@ -6,11 +6,11 @@ import org.springframework.format.annotation.DateTimeFormat;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Date;
+import java.sql.Timestamp;
 
 @Entity
 @Table(name="cash_transcation")
 public class CashTransaction implements Serializable {
-    //id, cash_id, amount, time, user_id
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
@@ -18,16 +18,24 @@ public class CashTransaction implements Serializable {
     private int id;
 
     @JoinColumn(name = "cash_id", referencedColumnName = "id")
-    @ManyToOne
-    private Cash cashId;
+    private int cashId;
 
     @Column(name = "amount")
     private float amount;
 
     @Column(name = "time")
     @DateTimeFormat(pattern = "yyyy-MM-dd HH-mm-ss")
-    private Date time;
+    private Timestamp time;
 
+    @Override
+    public String toString() {
+        return "CashTransaction{" +
+                "id=" + id +
+                ", cashId=" + cashId +
+                ", amount=" + amount +
+                ", time=" + time +
+                '}';
+    }
 
     public int getId() {
         return id;
@@ -37,11 +45,11 @@ public class CashTransaction implements Serializable {
         this.id = id;
     }
 
-    public Cash getCashId() {
+    public int getCashId() {
         return cashId;
     }
 
-    public void setCashId(Cash cashId) {
+    public void setCashId(int cashId) {
         this.cashId = cashId;
     }
 
@@ -53,11 +61,11 @@ public class CashTransaction implements Serializable {
         this.amount = amount;
     }
 
-    public Date getTime() {
+    public Timestamp getTime() {
         return time;
     }
 
-    public void setTime(Date time) {
+    public void setTime(Timestamp time) {
         this.time = time;
     }
 

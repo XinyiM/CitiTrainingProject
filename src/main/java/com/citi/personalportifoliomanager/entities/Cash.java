@@ -5,6 +5,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Date;
+import java.sql.Timestamp;
 
 @Entity
 @Table(name="cash")
@@ -25,7 +26,7 @@ public class Cash implements Serializable {
 
     @Column(name = "last_update_time")
     @DateTimeFormat(pattern = "yyyy-MM-dd HH-mm-ss")
-    private Date lastUpdateTime;
+    private Timestamp lastUpdateTime;
 
     // bidirectional
     @JoinColumn (name="user_id", referencedColumnName="id", nullable = false)
@@ -64,11 +65,11 @@ public class Cash implements Serializable {
         this.amount = amount;
     }
 
-    public Date getLastUpdateTime() {
+    public Timestamp getLastUpdateTime() {
         return lastUpdateTime;
     }
 
-    public void setLastUpdateTime(Date lastUpdateTime) {
+    public void setLastUpdateTime(Timestamp lastUpdateTime) {
         this.lastUpdateTime = lastUpdateTime;
     }
 

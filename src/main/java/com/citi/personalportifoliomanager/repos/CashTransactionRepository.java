@@ -7,6 +7,8 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.List;
 
 public interface CashTransactionRepository extends JpaRepository<CashTransaction, Integer>{
-    @Query(value="select * from CashTransaction ct where ct.cash_id = :id" ,nativeQuery=true)
-    public List<CashTransaction> findCashTransactionByCashId(int cashId);
+
+    @Query(value="select * from cash_transcation ct where ct.cash_id = :id" ,nativeQuery=true)
+    public List<CashTransaction> findCashTransactionByCashId(int id);
+
 }

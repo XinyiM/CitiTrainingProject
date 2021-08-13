@@ -15,7 +15,7 @@ class StockServiceTest {
 
     @Test
     void invoke() throws IOException {
-        final StockWrapper stock = stockService.finsStock("GOOG");
+        final StockWrapper stock = stockService.findStock("GOOG");
         System.out.println(stock.getStock());
         final BigDecimal price = stockService.findPrice(stock);
         System.out.println(price);
