@@ -30,8 +30,7 @@ public class Cash implements Serializable {
 
     // bidirectional
     @JoinColumn (name="user_id", referencedColumnName="id", nullable = false)
-    @ManyToOne
-    private User user;
+    private int userId;
 
     public int getId() {
         return id;
@@ -73,11 +72,11 @@ public class Cash implements Serializable {
         this.lastUpdateTime = lastUpdateTime;
     }
 
-    public User getUser() {
-        return user;
+    public int getUser() {
+        return userId;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setUser(int userId) {
+        this.userId = userId;
     }
 }
