@@ -21,9 +21,9 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User findUserById(int id) {
-        Optional<User> discOptional =  userRepository.findById(id);
-        if (discOptional.isPresent()) {
-            return discOptional.get();
+        Optional<User> user =  userRepository.findById(id);
+        if (user.isPresent()) {
+            return user.get();
         }
         else return null;
     }
