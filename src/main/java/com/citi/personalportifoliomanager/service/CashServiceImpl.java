@@ -6,8 +6,10 @@ import com.citi.personalportifoliomanager.repos.CashRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.*;
-import java.util.*;
+import java.sql.Time;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Optional;
 
 @Service
 public class CashServiceImpl implements CashService{
@@ -32,6 +34,12 @@ public class CashServiceImpl implements CashService{
             return cash.get();
         }
         else return null;
+    }
+
+    @Override
+    public HashMap<Time, Float> getCashChangesByUserIdAndTime(int id, Time time) {
+        // TODO add a implementation method to get Cash changes Time Float key value pairs - hashmap
+        return null;
     }
 
 }

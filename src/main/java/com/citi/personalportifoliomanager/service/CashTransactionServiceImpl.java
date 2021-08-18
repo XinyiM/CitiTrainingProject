@@ -29,6 +29,7 @@ public class CashTransactionServiceImpl implements CashTransactionService{
         int cashId = cashTransaction.getCashId();
         Cash cash = cashRepository.getById(cashId);
         cash.setAmount(cash.getAmount() + cashTransaction.getAmount());
+        cash.setLastUpdateTime(cashTransaction.getTime());
         cashRepository.save(cash);
         return cashTransactionRepository.save(cashTransaction);
     }
