@@ -31,7 +31,6 @@ public class Investment implements Serializable {
     private Timestamp lastUpdateTime;
 
     @JoinColumn (name="user_id", referencedColumnName="id", nullable = false)
-//    @ManyToOne
     private int user;
 
     public int getId() {
