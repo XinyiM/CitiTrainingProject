@@ -31,7 +31,7 @@ public class Investment implements Serializable {
     private Timestamp lastUpdateTime;
 
     @JoinColumn (name="user_id", referencedColumnName="id", nullable = false)
-    private int user;
+    private int userId;
 
     public int getId() {
         return id;
@@ -74,10 +74,10 @@ public class Investment implements Serializable {
     }
 
     public int getUser() {
-        return user;
+        return userId;
     }
 
-    public void setUser(int user) {
-        this.user = user;
+    public void setUser(int userId) {
+        this.userId = userId;
     }
 }
