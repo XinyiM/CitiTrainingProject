@@ -28,7 +28,7 @@ public class NetWorthController {
 
     // sample request url: http://localhost:8080/networthhistory/id=2/date=2021-08-18
     @GetMapping(value = "/id={id}/date={date}")
-    public Collection<NetWorthHistory> getNetWorthHistoryByIdAndDate(@PathVariable int id, @PathVariable String date){
+    public Collection<NetWorthHistory> getNetWorthHistoryByIdAndDate(@PathVariable("id") int id, @PathVariable("date") String date){
         date += " 00:00:00";
         Timestamp datetime = Timestamp.valueOf(date);
         return netWorthHistoryService.getNetWorthHistoryByUserIdAndDate(id, datetime);
