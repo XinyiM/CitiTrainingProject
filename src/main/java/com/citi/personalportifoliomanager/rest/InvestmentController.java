@@ -27,4 +27,10 @@ public class InvestmentController {
     public Collection<Investment> getInvestmentByUserId(@PathVariable("id") int userId){
         return investmentService.findInvestmentAccountByUserId(userId);
     }
+
+    // sample request: http://localhost:8080/invest/userid=2/portfolio=stock
+    @RequestMapping(method = RequestMethod.GET, value="/userid={userId}/portfolio={portfolio}")
+    public Collection<Investment> getInvestmentPortfolioByUserId(@PathVariable("userId") int id, @PathVariable("portfolio") String portfolio){
+        return investmentService.getInvestmentPortfolioByUserId(id, portfolio);
+    }
 }

@@ -1,7 +1,6 @@
 package com.citi.personalportifoliomanager.service;
 
 import com.citi.personalportifoliomanager.entities.Investment;
-import com.citi.personalportifoliomanager.entities.InvestmentTransaction;
 import com.citi.personalportifoliomanager.repos.InvestmentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -32,10 +31,12 @@ public class InvestmentServiceImpl implements InvestmentService {
     @Override
     public Investment findInvestmentAccountById(int id) {
         Optional<Investment> Investment =  investmentRepository.findById(id);
-        if (Investment.isPresent()) {
-            return Investment.get();
-        }
-        else return null;
+        return Investment.orElse(null);
+    }
+
+    @Override
+    public Collection<Investment> getInvestmentPortfolioByUserId(int id, String portfolio) {
+        return investmentRepository.getInvestmentPortfolioByUserId(id, portfolio);
     }
 
 }

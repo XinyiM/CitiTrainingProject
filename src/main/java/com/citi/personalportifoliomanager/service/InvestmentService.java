@@ -12,4 +12,6 @@ public interface InvestmentService {
     Collection<Investment> findAllInvestmentAccount();
 
     Investment findInvestmentAccountById(int id);
+
+    Collection<Investment> getInvestmentPortfolioByUserId(int id, String portfolio);
 }

@@ -41,6 +41,14 @@ public class Investment implements Serializable {
         this.id = id;
     }
 
+    public String getPortfolio() {
+        return portfolio;
+    }
+
+    public void setPortfolio(String portfolio) {
+        this.portfolio = portfolio;
+    }
+
     public String getName() {
         return name;
     }
