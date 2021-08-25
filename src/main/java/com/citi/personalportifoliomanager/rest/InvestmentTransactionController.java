@@ -29,7 +29,8 @@ public class InvestmentTransactionController {
     public Collection<InvestmentTransaction> getInvestmentTransactionByInvestmentId(@PathVariable("id") int InvestmentId) {
         return investmentTransactionService.findInvestmentTransactionByInvestmentId(InvestmentId);
     }
-
+    
+    @CrossOrigin(origins = "*")
     @RequestMapping(method = RequestMethod.POST, value = "/saveit")
     public String saveInvestmentTransaction(@RequestBody InvestmentTransaction investmentTransaction){
         investmentTransactionService.saveInvestmentTransaction(investmentTransaction);
