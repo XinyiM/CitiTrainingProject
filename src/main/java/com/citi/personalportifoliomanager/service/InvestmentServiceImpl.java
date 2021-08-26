@@ -41,7 +41,7 @@ public class InvestmentServiceImpl implements InvestmentService {
     }
 
     @Override
-    public Investment saveInvestment(Investment investment) {
-        return investmentRepository.save(investment);
+    public void saveInvestment(Investment investment) {
+        investmentRepository.save(investment);
     }
 }
