@@ -37,7 +37,7 @@ public class InvestmentController {
 
     @CrossOrigin(origins = "*")
     @RequestMapping(method = RequestMethod.POST, value = "/saveit")
-    public String saveInvestmentTransaction(@RequestBody Investment investment){
+    public String saveInvestment(@RequestBody Investment investment){
         investmentService.saveInvestment(investment);
         return investment.toString();
     }
