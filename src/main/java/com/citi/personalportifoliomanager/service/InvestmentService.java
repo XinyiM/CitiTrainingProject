@@ -14,4 +14,6 @@ public interface InvestmentService {
     Investment findInvestmentAccountById(int id);
 
     Collection<Investment> getInvestmentPortfolioByUserId(int id, String portfolio);
+
+    Investment saveInvestment(Investment investment);
 }
