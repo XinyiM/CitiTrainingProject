@@ -1,6 +1,7 @@
 package com.citi.personalportifoliomanager.rest;
 
 import com.citi.personalportifoliomanager.entities.Investment;
+import com.citi.personalportifoliomanager.entities.InvestmentTransaction;
 import com.citi.personalportifoliomanager.service.InvestmentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -32,5 +33,12 @@ public class InvestmentController {
     @RequestMapping(method = RequestMethod.GET, value="/userid={userId}/portfolio={portfolio}")
     public Collection<Investment> getInvestmentPortfolioByUserId(@PathVariable("userId") int id, @PathVariable("portfolio") String portfolio){
         return investmentService.getInvestmentPortfolioByUserId(id, portfolio);
+    }
+
+    @CrossOrigin(origins = "*")
+    @RequestMapping(method = RequestMethod.POST, value = "/saveit")
+    public String saveInvestmentTransaction(@RequestBody Investment investment){
+        investmentService.saveInvestment(investment);
+        return investment.toString();
     }
 }
